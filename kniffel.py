@@ -68,4 +68,34 @@ def player_turn(categories):
                     print("Ungültige Eingabe oder Kategorie bereits verwendet")
         else: # nach drittem wurf wird eingabe einer kategorie erzwungen
             choose_category(categories, dice)
-        
+def print_open_categories(categories): #Benutzerfreundlicher, da es dem Spieler die mögliche auswahl anzeigt
+  open_cats = [cat for cat, used in categories.items() if not used]
+  print("folgende Kategorien haben Sie noch offen:",",".join(open_cats)) 
+
+def calculate_score(category,dice):
+  counts = {i: dice.count(i) for i in range (1, 7}
+  if category in ["einser","zweier","dreier","vierer","fuenfer","sechser"]:
+    num = ["einser","zweier","dreier","vierer","fuenfer","sechser"].index(category) + 1
+    return num * counts.get(num, 0)
+  elif category == "dreierpasch":
+    return sum(dice) if any(count >= 3 for count in counts.values()) else 0
+  elif category == "viererpasch":
+    return sum(dice) if any(count >= 4 for count in counts.values()) else 0
+  elif category == "fullhouse":
+    return 25 if 2 in counts.values() and 3 in counts.values() else 0
+  elif category == "kleinestrasse":
+    sorted_dice = sorted(sed(dice))
+    if len(sorted_dice) >= 4 and (
+      max(sorted_dice) - min(sorted_dice) == 3 or 
+      set(sorted_dice) in [{1, 2, 3, 4}, {2, 3, 4, 5}, {3, 4, 5, 6}]
+):
+      return 30
+    return 0
+  elif category == "grossestrasse":
+    sorted_dice = sorted(set(dice))
+    return 40 if len(sorted_dice)) == 5 and max(sorted_dice) - min(sorted_dice) == 4 else 0
+  elif category == "chance":
+    return sum(dice)
+  elif category == "kniffel":
+    return 50 if any(count == 5 for count in counts.values()) else 0
+  return 0
