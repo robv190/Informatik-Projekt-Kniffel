@@ -4,6 +4,10 @@ def calculate_total_score(score):
     global total_score
     total_score += score
     return total_score
+def bonus():
+    global oberer_teil
+    if oberer_teil >= 63:
+        total_score += 35
 
 def roll_dice(num_dice=5):
     return [random.randint(1, 6) for _ in range(num_dice)]
