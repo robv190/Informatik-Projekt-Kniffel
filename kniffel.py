@@ -92,12 +92,6 @@ def player_turn(categories):
                     return
                 else: 
                     print("Ungültige Eingabe oder Kategorie bereits verwendet")
-#        elif eingabe in categories and not categories[eingabe]:
-#                    score = calculate_score(eingabe, dice)
-#                    calculate_total_score(score)
-#                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
-#                    categories[eingabe] = True
-#                    return
     else:
             choose_category(categories, dice)
 def print_open_categories(categories): #Benutzerfreundlicher, da es dem Spieler die mögliche auswahl anzeigt
@@ -122,10 +116,9 @@ def calculate_score(category,dice):
     sorted_dice = sorted(sorted(dice))
     if len(sorted_dice) >= 4 and (
       max(sorted_dice) - min(sorted_dice) == 3 or 
-      set(sorted_dice) in [{1, 2, 3, 4}, {2, 3, 4, 5}, {3, 4, 5, 6}]
-):
+      set(sorted_dice) in [{1, 2, 3, 4}, {2, 3, 4, 5}, {3, 4, 5, 6}]):
       return 30
-    return 0
+    else: return 0
   elif category == "grossestrasse":
     sorted_dice = sorted(set(dice))
     return 40 if len(sorted_dice) == 5 and max(sorted_dice) - min(sorted_dice) == 4 else 0
