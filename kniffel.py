@@ -107,7 +107,7 @@ def print_open_categories(categories): #Benutzerfreundlicher, da es dem Spieler 
   print("folgende Kategorien haben Sie noch offen:",",".join(open_cats)) 
 
 def calculate_score(category,dice):
-  counts = {i: dice.count(i) for i in range (1, 7}
+  counts = {i: dice.count(i) for i in range (1, 7)}
   if category in ["einser","zweier","dreier","vierer","fuenfer","sechser"]:
     num = ["einser","zweier","dreier","vierer","fuenfer","sechser"].index(category) + 1
     return num * counts.get(num, 0)
