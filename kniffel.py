@@ -1,11 +1,15 @@
 import random
+total_score = 0
+oberer_teil = 0
 
 def calculate_total_score(score):
     global total_score
     total_score += score
     return total_score
+
 def bonus():
     global oberer_teil
+    global total_score 
     if oberer_teil >= 63:
         total_score += 35
 
@@ -51,13 +55,14 @@ def player_turn(categories):
             while True:
                 print("Wollen sie ihren Zug beenden? Wenn ja, geben sie ihre gewünschte Kategorie ein. Wenn sie eine Übersicht über ihre offenen Kategorien haben wollen, schreiben sie 'übersicht'. Wenn sie nochmal wüfeln möchten, schreiben sie 'würfel'")
                 eingabe = input().strip().lower() # entfernt außenstehende leerzeichen und formiert die eingabe in kleinbuchstaben
+
 def handle_reroll(dice):
     print("Welche Würfel möchten sie neu würfeln? Geben sie die Nummern der Würfel, die sie neu würfeln möchten, getrennt durch ein Leerzeichen ein (1-5).")
     reroll_input = input().strip()
     indices = [int(i) - 1 for i in reroll_input.split() if i.isdigit() and 0 <= int(i) - 1 < 5]
     for idx in indices:
         dice[idx] = random.randint(1,6)
-        print_dice(dice)
+    print_dice(dice)
     print(" ".join(dice_faces[die] for die in dice))
 
 def choose_category(categories, dice):
@@ -111,6 +116,7 @@ def print_open_categories(categories): #Benutzerfreundlicher, da es dem Spieler 
   print("folgende Kategorien haben Sie noch offen:",",".join(open_cats)) 
 
 def calculate_score(category,dice):
+  global oberer_teil
   counts = {i: dice.count(i) for i in range (1, 7)}
   if category in ["einser","zweier","dreier","vierer","fuenfer","sechser"]:
     num = ["einser","zweier","dreier","vierer","fuenfer","sechser"].index(category) + 1
@@ -142,6 +148,7 @@ def calculate_score(category,dice):
 
 
 def main():
+    global total_score
     categories = initialize_categories()
     while not all_categories_used(categories):
         player_turn(categories)
