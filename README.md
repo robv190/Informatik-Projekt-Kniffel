@@ -25,9 +25,6 @@ Das Spiel kann alleine oder mit mehreren Spielern gespielt werden und bietet ein
 - Möglichkeit, Würfe strategisch zu behalten oder erneut zu würfeln
 
 
-## Installation
-
-
 ## Technologien
 
 ### Programmiersprache
