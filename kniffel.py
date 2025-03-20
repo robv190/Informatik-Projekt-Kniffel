@@ -55,7 +55,6 @@ def handle_reroll(dice):
     for idx in indices:
         dice[idx] = random.randint(1,6)
     print_dice(dice)
-    print(" ".join(dice_faces[die] for die in dice))
 
 def choose_category(categories, dice):
     while True:
