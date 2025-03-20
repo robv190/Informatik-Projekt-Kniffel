@@ -1,4 +1,6 @@
 # Informatik-Projekt-Kniffel
+
+Ersteller : Robin Vogt, Nick Daub, Tom Holst, Paulo Ramos Weik, Hüseyin Sahin
 ***
 
 ## Inhaltsverzeichnis
@@ -37,6 +39,15 @@ Das Spiel kann alleine oder mit mehreren Spielern gespielt werden und bietet ein
 
 
 ## Erklärung des Spiels
+Kniffel ist ein beliebtes Würfelspiel, bei dem es darum geht, in 13 Runden möglichst viele Punkte zu sammeln.
+Jeder Spieler hat pro Runde bis zu drei Würfe, um eine optimale Kombination zu erreichen.
+
+Die gewürfelten Werte werden in einer Wertungstabelle eingetragen, entweder in den **oberen Block** (wo die Summe von gleichen Zahlen gezählt wird)
+oder in den **unteren Block** (mit speziellen Kombinationen wie z.B. "Full House" oder "Große Straße").
+
+Das Ziel ist es, strategisch zu entscheiden, wann welche Kategorien genutzt werden und ob man riskiert, noch einmal zu würfeln oder sich mit dem aktuellen Wurf zufrieden gibt.
+Ein Kniffel (5 gleiche Würfel) bringt die meisten Punkte und kann im Laufe des Spiels Bonuspunkte einbringen.
+Am Ende gewinnt der Spieler mit der höchsten Gesamtpunktzahl.
 
 
 
