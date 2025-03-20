@@ -63,3 +63,22 @@ Das Spiel kann alleine oder mit mehreren Spielern gespielt werden und bietet ein
 ### 3. Wertungstabelle 
 - Jeder Spieler muss jede Kategorie genau einmal ausfüllen
 - Falls keine passende Kategorie gewählt werden kann, muss eine mit 0 Punkten gestrichen werden
+
+| Kategorie           | Punktevergabe |
+|---------------------|--------------|
+| **Oberer Block**    |              |
+| Einser             | Summe aller Einser |
+| Zweier             | Summe aller Zweier |
+| Dreier             | Summe aller Dreier |
+| Vierer             | Summe aller Vierer |
+| Fünfer             | Summe aller Fünfer |
+| Sechser            | Summe aller Sechser |
+| **Bonus (35 Punkte)** | Wenn Summe oben ≥ 63 |
+| **Unterer Block**  |              |
+| Dreierpasch       | Summe aller Würfel (mind. 3 gleiche) |
+| Viererpasch       | Summe aller Würfel (mind. 4 gleiche) |
+| Full House        | **25 Punkte** (Drilling + Paar) |
+| Kleine Straße     | **30 Punkte** (z. B. 1-2-3-4) |
+| Große Straße      | **40 Punkte** (z. B. 2-3-4-5-6) |
+| Kniffel           | **50 Punkte** (5 gleiche Würfel) |
+| Chance           | Summe aller Würfel |
