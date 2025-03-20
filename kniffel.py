@@ -47,14 +47,6 @@ def print_image_dice(dice):
     print(" ".join(dice_faces[die] for die in dice))
 
   
-def player_turn(categories):
-    dice = roll_dice()
-    print_dice(dice)
-    for roll in range(3): # Zählt Würfe mit
-        if roll < 2: # gibt Möglichkeit zu wählen ob man neu würfeln oder den zug beenden will
-            while True:
-                print("Wollen sie ihren Zug beenden? Wenn ja, geben sie ihre gewünschte Kategorie ein. Wenn sie eine Übersicht über ihre offenen Kategorien haben wollen, schreiben sie 'übersicht'. Wenn sie nochmal wüfeln möchten, schreiben sie 'würfel'")
-                eingabe = input().strip().lower() # entfernt außenstehende leerzeichen und formiert die eingabe in kleinbuchstaben
 
 def handle_reroll(dice):
     print("Welche Würfel möchten sie neu würfeln? Geben sie die Nummern der Würfel, die sie neu würfeln möchten, getrennt durch ein Leerzeichen ein (1-5).")
@@ -100,13 +92,12 @@ def player_turn(categories):
                     return
                 else: 
                     print("Ungültige Eingabe oder Kategorie bereits verwendet")
-                break
-        elif eingabe in categories and not categories[eingabe]:
-                    score = calculate_score(eingabe, dice)
-                    calculate_total_score(score)
-                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
-                    categories[eingabe] = True
-                    return
+#        elif eingabe in categories and not categories[eingabe]:
+#                    score = calculate_score(eingabe, dice)
+#                    calculate_total_score(score)
+#                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
+#                    categories[eingabe] = True
+#                    return
         else:
                     print("Ungültige Eingabe oder Kategorie bereits verwendet.")
     else:
