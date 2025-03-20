@@ -7,10 +7,9 @@ def calculate_total_score(score):
     total_score += score
     return total_score
 
-
 def bonus():
-    global total_score
     global oberer_teil
+    global total_score 
     if oberer_teil >= 63:
         total_score += 35
 
@@ -19,7 +18,8 @@ def roll_dice(num_dice=5):
 
 def print_dice(dice):
     print("Sie haben gewürfelt: ", *dice)
-    print(" ".join(dice_faces[die] for die in dice))    
+    print(" ".join(dice_faces[die] for die in dice))
+
 
 def initialize_categories():
     return {
@@ -46,12 +46,14 @@ dice_faces = { 1: "⚀", 2: "⚁", 3: "⚂", 4: "⚃", 5: "⚄", 6: "⚅"}
 def print_image_dice(dice):
     print(" ".join(dice_faces[die] for die in dice))
 
+  
+
 def handle_reroll(dice):
-    print("Welche Würfel möchten Sie neu würfeln? Geben Sie die Nummern der Würfel, die Sie neu würfeln möchten, getrennt durch ein Leerzeichen ein (1-5).")
+    print("Welche Würfel möchten sie neu würfeln? Geben sie die Nummern der Würfel, die sie neu würfeln möchten, getrennt durch ein Leerzeichen ein (1-5).")
     reroll_input = input().strip()
     indices = [int(i) - 1 for i in reroll_input.split() if i.isdigit() and 0 <= int(i) - 1 < 5]
     for idx in indices:
-        dice[idx] = random.randint(1, 6)
+        dice[idx] = random.randint(1,6)
     print_dice(dice)
     print(" ".join(dice_faces[die] for die in dice))
 
@@ -90,15 +92,12 @@ def player_turn(categories):
                     return
                 else: 
                     print("Ungültige Eingabe oder Kategorie bereits verwendet")
-                break
-        elif eingabe in categories and not categories[eingabe]:
-                    score = calculate_score(eingabe, dice)
-                    calculate_total_score(score)
-                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
-                    categories[eingabe] = True
-                    return
-        else:
-                    print("Ungültige Eingabe oder Kategorie bereits verwendet.")
+#        elif eingabe in categories and not categories[eingabe]:
+#                    score = calculate_score(eingabe, dice)
+#                    calculate_total_score(score)
+#                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
+#                    categories[eingabe] = True
+#                    return
     else:
             choose_category(categories, dice)
 def print_open_categories(categories): #Benutzerfreundlicher, da es dem Spieler die mögliche auswahl anzeigt
