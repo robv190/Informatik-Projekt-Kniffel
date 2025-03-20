@@ -15,11 +15,10 @@ Ersteller : Robin Vogt, Nick Daub, Tom Holst, Paulo Ramos Weik, Hüseyin Sahin
 
 ## Einleitung
 Dieses Projekt ist eine digitale Umsetzung des Würfelspiels Kniffel (auch bekannt als Yahtzee). 
-Das Spiel kann alleine oder mit mehreren Spielern gespielt werden und bietet eine interaktive Benutzeroberfläche.
+Das Spiel kann alleine gespielt werden und bietet eine interaktive Benutzeroberfläche.
 
 
 ## Features
-- Spieleranzahl wählbar
 - Zufallsbasierte Würflewürfe
 - Punkteberechnung nach offiziellen Kniffel-Regeln
 - Möglichkeit, Würfe strategisch zu behalten oder erneut zu würfeln
@@ -31,29 +30,27 @@ Das Spiel kann alleine oder mit mehreren Spielern gespielt werden und bietet ein
 - Python
 
 ### Bibliotheken
-- tkinter
 - random
 
 
 ## Erklärung des Spiels
 Kniffel ist ein beliebtes Würfelspiel, bei dem es darum geht, in 13 Runden möglichst viele Punkte zu sammeln.
-Jeder Spieler hat pro Runde bis zu drei Würfe, um eine optimale Kombination zu erreichen.
+Pro Runde hat man bis zu drei Würfe, um eine optimale Kombination zu erreichen.
 
 Die gewürfelten Werte werden in einer Wertungstabelle eingetragen, entweder in den **oberen Block** (wo die Summe von gleichen Zahlen gezählt wird)
 oder in den **unteren Block** (mit speziellen Kombinationen wie z.B. "Full House" oder "Große Straße").
 
 Das Ziel ist es, strategisch zu entscheiden, wann welche Kategorien genutzt werden und ob man riskiert, noch einmal zu würfeln oder sich mit dem aktuellen Wurf zufrieden gibt.
 Ein Kniffel (5 gleiche Würfel) bringt die meisten Punkte und kann im Laufe des Spiels Bonuspunkte einbringen.
-Am Ende gewinnt der Spieler mit der höchsten Gesamtpunktzahl.
+Das Ziel des Spiels ist möglichst viele Punkte zu erreichen.
 
 
 
 ## Spielanleitung
 1. Starten Sie das Programm
-2. Wählen Sie die Anzahl der Spieler
-3. Würfen Sie bis zu drei Mal pro Runde und entscheiden Sie, welche Würfeln Sie behalten möchten
-4. Wählen Sie eine Kategorie für den Wurf (z.B. Dreierpasch, Große Straße, etc.)
-5. Das Spiel endet nach 13 Runden und der Spieler mit der höchsten Punktzahl gewinnt
+2. Würfeln Sie bis zu drei Mal pro Runde und entscheiden Sie, welche Würfeln Sie behalten möchten
+3. Wählen Sie eine Kategorie für den Wurf (z.B. Dreierpasch, Große Straße, etc.)
+4. Das Spiel endet nach 13 Runden und die Gesamptpunktzahl wird ausgegeben
 
 
 ## Offizielle Spielregeln
@@ -63,13 +60,13 @@ Am Ende gewinnt der Spieler mit der höchsten Gesamtpunktzahl.
 - 1 Kniffelwertungstabelle
 
 ### 2. Spielablauf
-- Jeder Spieler hat 13 Runden
-- Pro Runde darf ein Spieler bis zu drei Mal würfeln
+- Es gibt 13 Runden
+- Pro Runde darf der Spieler bis zu drei Mal würfeln
 - Nach jedem Wurf kann der Spieler beliebige Würfel zurücklegen und mit den restlichen neu würfeln
 - Nach den drei Würfen muss der Spieler eine Punktekästchen in der Wertungstabelle ausfüllen
 
 ### 3. Wertungstabelle 
-- Jeder Spieler muss jede Kategorie genau einmal ausfüllen
+- Der Spieler muss jede Kategorie genau einmal ausfüllen
 - Falls keine passende Kategorie gewählt werden kann, muss eine mit 0 Punkten gestrichen werden
 
 | Kategorie           | Punktevergabe |
