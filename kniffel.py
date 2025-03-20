@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random
 
 def calculate_total_score(score):
@@ -15,6 +14,7 @@ def roll_dice(num_dice=5):
 
 def print_dice(dice):
     print("Sie haben gewürfelt: ", *dice)
+    print(" ".join(dice_faces[die] for die in dice))
 
 
 def initialize_categories():
@@ -37,15 +37,12 @@ def initialize_categories():
 def all_categories_used(categories):
     return all(categories.values())
 
-def main():
-    categories = initialize_categories()
-    while not all_categories_used(categories):
-        player_turn(categories)
-    print("Spiel beendet! Alle Kategorien sind ausgefüllt.Sie haben insgesamt", total_score, "Punkte erzielt.")
+dice_faces = { 1: "⚀", 2: "⚁", 3: "⚂", 4: "⚃", 5: "⚄", 6: "⚅"}
 
-if __name__ == "__main__":
-    main()
-    
+def print_image_dice(dice):
+    print(" ".join(dice_faces[die] for die in dice))
+
+  
 def player_turn(categories):
     dice = roll_dice()
     print_dice(dice)
@@ -54,7 +51,6 @@ def player_turn(categories):
             while True:
                 print("Wollen sie ihren Zug beenden? Wenn ja, geben sie ihre gewünschte Kategorie ein. Wenn sie eine Übersicht über ihre offenen Kategorien haben wollen, schreiben sie 'übersicht'. Wenn sie nochmal wüfeln möchten, schreiben sie 'würfel'")
                 eingabe = input().strip().lower() # entfernt außenstehende leerzeichen und formiert die eingabe in kleinbuchstaben
-=======
 def handle_reroll(dice):
     print("Welche Würfel möchten sie neu würfeln? Geben sie die Nummern der Würfel, die sie neu würfeln möchten, getrennt durch ein Leerzeichen ein (1-5).")
     reroll_input = input().strip()
@@ -62,8 +58,9 @@ def handle_reroll(dice):
     for idx in indices:
         dice[idx] = random.randint(1,6)
         print_dice(dice)
+    print(" ".join(dice_faces[die] for die in dice))
 
-def choose_category(categoreis, dice):
+def choose_category(categories, dice):
     while True:
         print("Geben sie die gewünschte Kategorie ein, wenn sie wissen wollen welche Kategorien noch frei sind, schreiben sie 'Übersicht'.")
         eingabe = input().strip().lower()
@@ -85,12 +82,10 @@ def player_turn(categories):
             while True:
                 print("Wollen sie ihren Zug beenden? Wenn ja, geben sie ihre gewünschte Kategorie in Kleinbuchstaben ein. Wenn sie eine Übersicht haben wollen welche Kategorien noch frei sind, schreiben sie 'übersicht'. Wenn nicht schreiben sie 'würfel'.")
                 eingabe = input().strip().lower()
->>>>>>> ratings-and-categories
                 if eingabe == "übersicht":
                     print_open_categories(categories)
                 elif eingabe == "würfel":
                     handle_reroll(dice)
-<<<<<<< HEAD
                     break #verlässt die while-schleife
                 elif eingabe in categories and not categories[eingabe]:
                     score = calculate_score(eingabe, dice)
@@ -100,17 +95,28 @@ def player_turn(categories):
                     return
                 else: 
                     print("Ungültige Eingabe oder Kategorie bereits verwendet")
-        else: # nach drittem wurf wird eingabe einer kategorie erzwungen
+                break
+        elif eingabe in categories and not categories[eingabe]:
+                    score = calculate_score(eingabe, dice)
+                    calculate_total_score(score)
+                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
+                    categories[eingabe] = True
+                    return
+        else:
+                    print("Ungültige Eingabe oder Kategorie bereits verwendet.")
+    else:
             choose_category(categories, dice)
 def print_open_categories(categories): #Benutzerfreundlicher, da es dem Spieler die mögliche auswahl anzeigt
   open_cats = [cat for cat, used in categories.items() if not used]
   print("folgende Kategorien haben Sie noch offen:",",".join(open_cats)) 
 
 def calculate_score(category,dice):
-  counts = {i: dice.count(i) for i in range (1, 7}
+  counts = {i: dice.count(i) for i in range (1, 7)}
   if category in ["einser","zweier","dreier","vierer","fuenfer","sechser"]:
     num = ["einser","zweier","dreier","vierer","fuenfer","sechser"].index(category) + 1
+    oberer_teil += num * counts.get(num, 0)
     return num * counts.get(num, 0)
+    
   elif category == "dreierpasch":
     return sum(dice) if any(count >= 3 for count in counts.values()) else 0
   elif category == "viererpasch":
@@ -118,7 +124,7 @@ def calculate_score(category,dice):
   elif category == "fullhouse":
     return 25 if 2 in counts.values() and 3 in counts.values() else 0
   elif category == "kleinestrasse":
-    sorted_dice = sorted(sed(dice))
+    sorted_dice = sorted(sorted(dice))
     if len(sorted_dice) >= 4 and (
       max(sorted_dice) - min(sorted_dice) == 3 or 
       set(sorted_dice) in [{1, 2, 3, 4}, {2, 3, 4, 5}, {3, 4, 5, 6}]
@@ -127,22 +133,20 @@ def calculate_score(category,dice):
     return 0
   elif category == "grossestrasse":
     sorted_dice = sorted(set(dice))
-    return 40 if len(sorted_dice)) == 5 and max(sorted_dice) - min(sorted_dice) == 4 else 0
+    return 40 if len(sorted_dice) == 5 and max(sorted_dice) - min(sorted_dice) == 4 else 0
   elif category == "chance":
     return sum(dice)
   elif category == "kniffel":
     return 50 if any(count == 5 for count in counts.values()) else 0
   return 0
-=======
-                    break
-                elif eingabe in categories and not categories[eingabe]:
-                    score = calculate_score(eingabe, dice)
-                    calculate_total_score(score)
-                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
-                    categories[eingabe] = True
-                    return
-                else:
-                    print("Ungültige Eingabe oder Kategorie bereits verwendet.")
-        else:
-            choose_category(categories, dice)
->>>>>>> ratings-and-categories
+
+
+def main():
+    categories = initialize_categories()
+    while not all_categories_used(categories):
+        player_turn(categories)
+    print("Spiel beendet! Alle Kategorien sind ausgefüllt.Sie haben insgesamt", total_score, "Punkte erzielt.")
+
+if __name__ == "__main__":
+    main()
+  
