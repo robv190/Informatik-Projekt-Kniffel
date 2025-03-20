@@ -1,43 +1,46 @@
-##### Informatik-Projekt-Kniffel
+# Informatik-Projekt-Kniffel
 ***
 
+## Inhaltsverzeichnis
+### 1. Einleitung
+### 2. Features
+### 3. Installation
+### 4. Technologien
+### 5. Erklärung des Spiels
+### 6. Spielanleitung
+### 7. Offizielle Spielregeln
 
 
-### Inhaltsverzeichnis
-# 1. Einleitung
-# 2. Features
-# 3. Installation
-# 4. Technologien
-# 5. Spielanleitung
-# 6. Offizielle Spielregeln
-
-
-### Einleitung
+## Einleitung
 Dieses Projekt ist eine digitale Umsetzung des Würfelspiels Kniffel (auch bekannt als Yahtzee). 
 Das Spiel kann alleine oder mit mehreren Spielern gespielt werden und bietet eine interaktive Benutzeroberfläche.
 
 
-### Features
+## Features
 - Spieleranzahl wählbar
 - Zufallsbasierte Würflewürfe
 - Punkteberechnung nach offiziellen Kniffel-Regeln
 - Möglichkeit, Würfe strategisch zu behalten oder erneut zu würfeln
 
 
-### Installationen
+## Installation
 
 
-### Technologien
+## Technologien
 
-# Programmiersprache
+### Programmiersprache
 - Python
 
-# Bibliotheken
+### Bibliotheken
 - tkinter
 - random
 
 
-### Spielanleitung
+## Erklärung des Spiels
+
+
+
+## Spielanleitung
 1. Starten Sie das Programm
 2. Wählen Sie die Anzahl der Spieler
 3. Würfen Sie bis zu drei Mal pro Runde und entscheiden Sie, welche Würfeln Sie behalten möchten
@@ -45,4 +48,18 @@ Das Spiel kann alleine oder mit mehreren Spielern gespielt werden und bietet ein
 5. Das Spiel endet nach 13 Runden und der Spieler mit der höchsten Punktzahl gewinnt
 
 
-### Offizielle Spielregeln
+## Offizielle Spielregeln
+
+### 1. Spielmaterial
+- 5 sechseitige Würfel
+- 1 Kniffelwertungstabelle
+
+### 2. Spielablauf
+- Jeder Spieler hat 13 Runden
+- Pro Runde darf ein Spieler bis zu drei Mal würfeln
+- Nach jedem Wurf kann der Spieler beliebige Würfel zurücklegen und mit den restlichen neu würfeln
+- Nach den drei Würfen muss der Spieler eine Punktekästchen in der Wertungstabelle ausfüllen
+
+### 3. Wertungstabelle 
+- Jeder Spieler muss jede Kategorie genau einmal ausfüllen
+- Falls keine passende Kategorie gewählt werden kann, muss eine mit 0 Punkten gestrichen werden
