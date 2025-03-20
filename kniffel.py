@@ -98,8 +98,6 @@ def player_turn(categories):
 #                    print(f"Sie haben {score} Punkte in {eingabe} erziehlt.")
 #                    categories[eingabe] = True
 #                    return
-        else:
-                    print("Ungültige Eingabe oder Kategorie bereits verwendet.")
     else:
             choose_category(categories, dice)
 def print_open_categories(categories): #Benutzerfreundlicher, da es dem Spieler die mögliche auswahl anzeigt
