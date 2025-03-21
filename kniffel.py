@@ -56,9 +56,9 @@ def print_image_dice(dice): #Funktion um die Würfel als Bilder auszugeben
 
 def handle_reroll(dice): #Funktion um die Würfel neu zu würfeln
     print("Welche Würfel möchten sie neu würfeln? Geben sie die Nummern der Würfel, die sie neu würfeln möchten, getrennt durch ein Leerzeichen ein (1-5).")
-    reroll_input = input().strip()
-    indices = [int(i) - 1 for i in reroll_input.split() if i.isdigit() and 0 <= int(i) - 1 < 5]
-    for idx in indices:
+    reroll_input = input().strip() #Eingabe der Würfel die neu gewürfelt werden sollen
+    indices = [int(i) - 1 for i in reroll_input.split() if i.isdigit() and 0 <= int(i) - 1 < 5] #Liste der Würfel die neu gewürfelt werden sollen
+    for idx in indices: #Würfeln der Würfel die neu gewürfelt werden sollen
         dice[idx] = random.randint(1,6)
     print_dice(dice)
 
@@ -119,10 +119,10 @@ def calculate_score(category,dice): #Funktion um die Punkte zu berechnen
   elif category == "fullhouse":
     return 25 if 2 in counts.values() and 3 in counts.values() else 0
   elif category == "kleinestrasse":
-    sorted_dice = sorted(sorted(dice))
+    sorted_dice = sorted(sorted(dice)) #sortiert die Würfel und entfernt doppelte Würfel
     if len(sorted_dice) >= 4 and (
       max(sorted_dice) - min(sorted_dice) == 3 or 
-      set(sorted_dice) in [{1, 2, 3, 4}, {2, 3, 4, 5}, {3, 4, 5, 6}]):
+      set(sorted_dice) in [{1, 2, 3, 4}, {2, 3, 4, 5}, {3, 4, 5, 6}]): 
       return 30
     else: return 0
   elif category == "grossestrasse":
