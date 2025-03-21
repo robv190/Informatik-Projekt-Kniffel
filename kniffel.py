@@ -1,4 +1,4 @@
-# Autoren : Hüseyin Sahin, Tom Holst, Paulo Ramos Weik, Robin Vogt, Nick Daubb
+# Autoren : Hüseyin Sahin, Tom Holst, Paulo Ramos Weik, Robin Vogt, Nick Daub
 # Datum : 21.03.2025
 
 # Import: Das Modul "random" wird verwendet, um Zufallszahlen für die Würfelwürfe zu generieren.
@@ -10,7 +10,7 @@ oberer_teil = 0  #  Summe der Punkte im oberen Teil (Einser bis Sechser)
 
 #######################################################################################################
 # calculate_total_score berechnet die Gesamtpunkte
-# bonus überprüft ob ein Bonus ensteht und addiert ihn auf die Gesamptpunkte
+# bonus überprüft ob ein Bonus ensteht und addiert ihn auf die Gesamtpunkte
 # calculate_score berechnet die Punkte für die einzelnen Kategorien
 
 
