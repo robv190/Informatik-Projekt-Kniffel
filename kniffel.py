@@ -22,6 +22,7 @@ def bonus(): #Funktion um den Bonus zu berechnen
     global total_score 
     if oberer_teil >= 63:
         total_score += 35
+        print("Sie haben den Bonus erreicht!")
 
 def roll_dice(num_dice=5): #Funktion um die Würfel zu würfeln
     return [random.randint(1, 6) for _ in range(num_dice)]
@@ -102,7 +103,7 @@ def player_turn(categories): #Funktion um den Zug des Spielers zu verwalten
             
 def print_open_categories(categories): #Funktion um die noch offenen Kategorien auszugeben
   open_cats = [cat for cat, used in categories.items() if not used]
-  print("folgende Kategorien haben Sie noch offen:",",".join(open_cats)) 
+  print("folgende Kategorien haben Sie noch offen:",",".join(open_cats),", der obere Teil hat folgende Punktzahl: ", oberer_teil) 
 
 def calculate_score(category,dice): #Funktion um die Punkte zu berechnen
   global oberer_teil
