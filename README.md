@@ -1,16 +1,14 @@
 # Informatik-Projekt-Kniffel
 
-Ersteller : Robin Vogt, Nick Daub, Tom Holst, Paulo Ramos Weik, Hüseyin Sahin
 ***
 
 ## Inhaltsverzeichnis
 ### 1. Einleitung
 ### 2. Features
-### 3. Installation
-### 4. Technologien
-### 5. Erklärung des Spiels
-### 6. Spielanleitung
-### 7. Offizielle Spielregeln
+### 3. Technologien
+### 4. Erklärung des Spiels
+### 5. Spielanleitung
+### 6. Offizielle Spielregeln
 
 
 ## Einleitung
@@ -42,28 +40,28 @@ oder in den **unteren Block** (mit speziellen Kombinationen wie z.B. "Full House
 
 Das Ziel ist es, strategisch zu entscheiden, wann welche Kategorien genutzt werden und ob man riskiert, noch einmal zu würfeln oder sich mit dem aktuellen Wurf zufrieden gibt.
 Ein Kniffel (5 gleiche Würfel) bringt die meisten Punkte und kann im Laufe des Spiels Bonuspunkte einbringen.
-Das Ziel des Spiels ist möglichst viele Punkte zu erreichen.
+Schlussendlich sollen möglichst viele Punkte erreicht werden.
 
 
 
 ## Spielanleitung
-1. Starten Sie das Programm
+1. Starten Sie das Programm.
 2. Würfeln Sie bis zu drei Mal pro Runde und entscheiden Sie, welche Würfeln Sie behalten möchten
 3. Wählen Sie eine Kategorie für den Wurf (z.B. Dreierpasch, Große Straße, etc.)
-4. Das Spiel endet nach 13 Runden und die Gesamptpunktzahl wird ausgegeben
+4. Das Spiel endet nach 13 Runden und die Gesamtpunktzahl wird ausgegeben
 
 
 ## Offizielle Spielregeln
 
 ### 1. Spielmaterial
-- 5 sechseitige Würfel
+- 5 sechsseitige Würfel
 - 1 Kniffelwertungstabelle
 
 ### 2. Spielablauf
 - Es gibt 13 Runden
 - Pro Runde darf der Spieler bis zu drei Mal würfeln
 - Nach jedem Wurf kann der Spieler beliebige Würfel zurücklegen und mit den restlichen neu würfeln
-- Nach den drei Würfen muss der Spieler eine Punktekästchen in der Wertungstabelle ausfüllen
+- Nach den drei Würfen muss der Spieler ein Punktekästchen in der Wertungstabelle ausfüllen
 
 ### 3. Wertungstabelle 
 - Der Spieler muss jede Kategorie genau einmal ausfüllen
